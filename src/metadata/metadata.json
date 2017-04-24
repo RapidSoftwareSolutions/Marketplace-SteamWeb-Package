@@ -1,0 +1,491 @@
+{
+  "package": "SteamWeb",
+  "tagline": "SteamWeb API",
+  "description": "SteamWeb",
+  "image": "http:\/\/logo.clearbit.com\/steampowered.com",
+  "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-SteamWeb-Package",
+  "keywords": [
+  ],
+  "accounts": {
+    "domain": "steampowered.com",
+    "credentials": [
+      "apiKey"
+    ]
+  },
+  "blocks": [
+    {
+      "name": "getNewsForApp",
+      "description": "Returns the latest news of a game specified by its appId.",
+      "args": [
+        {
+          "name": "appId",
+          "type": "Number",
+          "info": "Id of the game you want the news of",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Version of the API, default v0002 in this method",
+          "required": false
+        },
+        {
+          "name": "count",
+          "type": "Number",
+          "info": "How many news entries you want to get returned.",
+          "required": false
+        },
+        {
+          "name": "maxLength",
+          "type": "Number",
+          "info": "Maximum length of each news entry.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getGlobalAchievementPercentagesForApp",
+      "description": "Returns on global achievements overview of a specific game in percentages.",
+      "args": [
+        {
+          "name": "appId",
+          "type": "Number",
+          "info": "Id of the game you want the percentage of",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Version of the API, default v0002 in this method",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getGlobalStatsForGame",
+      "description": "Returns the global stats of a game specified by its appId.",
+      "args": [
+        {
+          "name": "appId",
+          "type": "Number",
+          "info": "Id of the game you want the news of",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Version of the API, default v0001 in this method",
+          "required": false
+        },
+        {
+          "name": "count",
+          "type": "Number",
+          "info": "Length of the array of global stat names you will be passing.",
+          "required": true
+        },
+        {
+          "name": "achievementNames",
+          "type": "Array",
+          "info": "Name of the achievement as defined in Steamworks.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getPlayerSummaries",
+      "description": "Returns basic profile information for a list of 64-bit Steam IDs.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Your api key from Steam",
+          "required": true
+        },
+        {
+          "name": "steamIds",
+          "type": "String",
+          "info": "Comma-delimited list of 64 bit Steam IDs to return profile information for. Up to 100 Steam IDs can be requested.",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Version of the API, default v0002 in this method",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getFriendList",
+      "description": "Returns the friend list of any Steam user, provided his Steam Community profile visibility is set to \"Public\".",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Your api key from Steam",
+          "required": true
+        },
+        {
+          "name": "steamId",
+          "type": "Number",
+          "info": "64 bit Steam ID to return friend list for.",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Version of the API, default v0001 in this method",
+          "required": false
+        },
+        {
+          "name": "relationship",
+          "type": "String",
+          "info": "Relationship filter. Possibles values: all, friend.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getPlayerAchievements",
+      "description": "Returns a list of achievements for this user by app id",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Your api key from Steam",
+          "required": true
+        },
+        {
+          "name": "steamId",
+          "type": "Number",
+          "info": "64 bit Steam ID to return friend list for.",
+          "required": true
+        },
+        {
+          "name": "appId",
+          "type": "Number",
+          "info": "The ID for the game you're requesting",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Version of the API, default v0001 in this method",
+          "required": false
+        },
+        {
+          "name": "language",
+          "type": "String",
+          "info": "Language. If specified, it will return language data for the requested language.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getUserStatsForGame",
+      "description": "Returns a list of achievements for this user by app id",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Your api key from Steam",
+          "required": true
+        },
+        {
+          "name": "steamId",
+          "type": "Number",
+          "info": "64 bit Steam ID to return friend list for.",
+          "required": true
+        },
+        {
+          "name": "appId",
+          "type": "Number",
+          "info": "The ID for the game you're requesting",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Version of the API, default v0001 in this method",
+          "required": false
+        },
+        {
+          "name": "language",
+          "type": "String",
+          "info": "Language. If specified, it will return language data for the requested language.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getOwnedGames",
+      "description": "GetOwnedGames returns a list of games a player owns along with some playtime information, if the profile is publicly visible. ",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Your api key from Steam",
+          "required": true
+        },
+        {
+          "name": "steamId",
+          "type": "Number",
+          "info": "64 bit Steam ID to return game list for.",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Version of the API, default v0001 in this method",
+          "required": false
+        },
+        {
+          "name": "includeAppinfo",
+          "type": "Boolean",
+          "info": "Include game name and logo information in the output. The default is to return appids only.",
+          "required": false
+        },
+        {
+          "name": "includePlayedFreeGames",
+          "type": "Boolean",
+          "info": "By default, free games like Team Fortress 2 are excluded (as technically everyone owns them).",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getRecentlyPlayedGames",
+      "description": "GetOwnedGames returns a list of games a player owns along with some playtime information, if the profile is publicly visible. ",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Your api key from Steam",
+          "required": true
+        },
+        {
+          "name": "steamId",
+          "type": "Number",
+          "info": "64 bit Steam ID to return played games list for.",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Version of the API, default v0001 in this method",
+          "required": false
+        },
+        {
+          "name": "count",
+          "type": "Number",
+          "info": "Optionally limit to a certain number of games (the number of games a person has played in the last 2 weeks is typically very small) format",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "isPlayingSharedGame",
+      "description": "IsPlayingSharedGame returns the original owner's SteamID if a borrowing account is currently playing this game. If the game is not borrowed or the borrower currently doesn't play this game, the result is always 0.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Your api key from Steam",
+          "required": true
+        },
+        {
+          "name": "steamId",
+          "type": "Number",
+          "info": "The SteamID of the account playing.",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Version of the API, default v0001 in this method",
+          "required": false
+        },
+        {
+          "name": "appId",
+          "type": "Number",
+          "info": "The AppID of the game currently playing",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSchemaForGame",
+      "description": "GetSchemaForGame returns game name, gamev ersion and available game stats(achievements and stats).",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Your api key from Steam",
+          "required": true
+        },
+        {
+          "name": "appId",
+          "type": "Number",
+          "info": "The ID for the game you're requesting",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Version of the API, default v2 in this method",
+          "required": false
+        },
+        {
+          "name": "language",
+          "type": "String",
+          "info": "Language. If specified, it will return language data for the requested language.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getPlayerBans",
+      "description": "GetPlayerBans returns Community, VAC, and Economy ban statuses for given players.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Your api key from Steam",
+          "required": true
+        },
+        {
+          "name": "steamId",
+          "type": "Number",
+          "info": "The SteamID of the account playing.",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Version of the API, default v1 in this method",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }
+  ]
+}
