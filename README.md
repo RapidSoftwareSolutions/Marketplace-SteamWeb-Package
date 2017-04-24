@@ -9,6 +9,7 @@ SteamWeb
 0. Go to [Steam Website](http://steampowered.com)
 1. Register or log in
 2. Go to [Dev page](http://steamcommunity.com/dev/registerkey) to get your apiKey
+ 
 
 ## SteamWeb.getNewsForApp
 Returns the latest news of a game specified by its appId.
@@ -128,4 +129,36 @@ GetPlayerBans returns Community, VAC, and Economy ban statuses for given players
 | apiKey | credentials| Your api key from Steam
 | steamId| Number     | The SteamID of the account playing.
 | version| String     | Version of the API, default v1 in this method
+
+## SteamWeb.getAppList
+Get full list of apps
+
+| Field  | Type  | Description
+|--------|-------|----------
+| version| String| Version of the API, default v2 in this method
+
+## SteamWeb.serverAddress
+Get full list of apps
+
+| Field        | Type  | Description
+|--------------|-------|----------
+| serverAddress| String| Server address
+| version      | String| Version of the API, default v1 in this method
+
+## SteamWeb.upToDateCheck
+Check your server app version
+
+| Field     | Type  | Description
+|-----------|-------|----------
+| appId     | Number| Id of the app
+| appVersion| Number| Version of the app
+| version   | String| Version of the API, default v1 in this method
+
+## SteamWeb.getNumberOfCurrentPlayers
+Count number of current players for the app
+
+| Field  | Type  | Description
+|--------|-------|----------
+| appId  | Number| Id of the app
+| version| String| Version of the API, default v1 in this method
 

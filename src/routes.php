@@ -1,5 +1,9 @@
        <?php
        $routes = [
+       'getNumberOfCurrentPlayers',
+       'upToDateCheck',
+       'getServersAtAddress',
+       'getAppList',
        'getPlayerBans',
        'getSchemaForGame',
        'isPlayingSharedGame',

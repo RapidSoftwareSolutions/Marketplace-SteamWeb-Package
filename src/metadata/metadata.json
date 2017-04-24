@@ -486,6 +486,118 @@
           "info": "Success"
         }
       ]
+    },
+    {
+      "name": "getAppList",
+      "description": "Get full list of apps",
+      "args": [
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Version of the API, default v2 in this method",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "serverAddress",
+      "description": "Get full list of apps",
+      "args": [
+        {
+          "name": "serverAddress",
+          "type": "String",
+          "info": "Server address",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Version of the API, default v1 in this method",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "upToDateCheck",
+      "description": "Check your server app version",
+      "args": [
+        {
+          "name": "appId",
+          "type": "Number",
+          "info": "Id of the app",
+          "required": true
+        },
+        {
+          "name": "appVersion",
+          "type": "Number",
+          "info": "Version of the app",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Version of the API, default v1 in this method",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getNumberOfCurrentPlayers",
+      "description": "Count number of current players for the app",
+      "args": [
+        {
+          "name": "appId",
+          "type": "Number",
+          "info": "Id of the app",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Version of the API, default v1 in this method",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     }
   ]
 }

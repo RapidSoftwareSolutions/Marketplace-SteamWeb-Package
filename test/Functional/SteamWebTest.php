@@ -8,6 +8,9 @@ class SteamWebTest extends BaseTestCase {
     public function testListMetrics() {
 
         $routes = [
+            'getNumberOfCurrentPlayers',
+            'upToDateCheck',
+            'getServersAtAddress',
             'getPlayerBans',
             'getSchemaForGame',
             'isPlayingSharedGame',
