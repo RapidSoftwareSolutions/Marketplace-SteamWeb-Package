@@ -9,7 +9,6 @@ SteamWeb
 0. Go to [Steam Website](http://steampowered.com)
 1. Register or log in
 2. Go to [Dev page](http://steamcommunity.com/dev/registerkey) to get your apiKey
- 
 
 ## SteamWeb.getNewsForApp
 Returns the latest news of a game specified by its appId.
@@ -161,4 +160,25 @@ Count number of current players for the app
 |--------|-------|----------
 | appId  | Number| Id of the app
 | version| String| Version of the API, default v1 in this method
+
+## SteamWeb.getAssetClassInfo
+Get asset metadata for the assets in game
+
+| Field      | Type       | Description
+|------------|------------|----------
+| apiKey     | credentials| Your api key from Steam
+| appId      | Number     | Id of the app
+| classCount | Number     | The number of classids passed to the request
+| classIds   | Array      | Series of sequential numbers to form a list of class IDs
+| instanceIds| Array      | Instance ID of the nth class.
+
+## SteamWeb.getAssetPrices
+Get prices of items in the economy in game
+
+| Field   | Type       | Description
+|---------|------------|----------
+| apiKey  | credentials| Your api key from Steam
+| appId   | Number     | Id of the app
+| language| String     | The ISO639-1 language code for the language all localized strings should be returned in. Not all strings have been translated to every language. If a language does not have a string, the English string will be returned instead. If this parameter is omitted the string token will be returned for the strings.
+| currency| String     | The ISO 4217 code for currency specific filtering.
 

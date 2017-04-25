@@ -8,6 +8,8 @@ class SteamWebTest extends BaseTestCase {
     public function testListMetrics() {
 
         $routes = [
+            'getAssetPrices',
+            'getAssetClassInfo',
             'getNumberOfCurrentPlayers',
             'upToDateCheck',
             'getServersAtAddress',

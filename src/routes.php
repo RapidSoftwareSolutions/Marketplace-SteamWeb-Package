@@ -1,5 +1,7 @@
        <?php
        $routes = [
+       'getAssetPrices',
+       'getAssetClassInfo',
        'getNumberOfCurrentPlayers',
        'upToDateCheck',
        'getServersAtAddress',

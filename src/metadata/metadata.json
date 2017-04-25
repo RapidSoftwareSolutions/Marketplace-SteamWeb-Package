@@ -598,6 +598,92 @@
           "info": "Success"
         }
       ]
+    },
+    {
+      "name": "getAssetClassInfo",
+      "description": "Get asset metadata for the assets in game",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Your api key from Steam",
+          "required": true
+        },
+        {
+          "name": "appId",
+          "type": "Number",
+          "info": "Id of the app",
+          "required": true
+        },
+        {
+          "name": "classCount",
+          "type": "Number",
+          "info": "The number of classids passed to the request",
+          "required": true
+        },
+        {
+          "name": "classIds",
+          "type": "Array",
+          "info": "Series of sequential numbers to form a list of class IDs",
+          "required": true
+        },
+        {
+          "name": "instanceIds",
+          "type": "Array",
+          "info": "Instance ID of the nth class.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getAssetPrices",
+      "description": "Get prices of items in the economy in game",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Your api key from Steam",
+          "required": true
+        },
+        {
+          "name": "appId",
+          "type": "Number",
+          "info": "Id of the app",
+          "required": true
+        },
+        {
+          "name": "language",
+          "type": "String",
+          "info": "The ISO639-1 language code for the language all localized strings should be returned in. Not all strings have been translated to every language. If a language does not have a string, the English string will be returned instead. If this parameter is omitted the string token will be returned for the strings.",
+          "required": false
+        },
+        {
+          "name": "currency",
+          "type": "String",
+          "info": "The ISO 4217 code for currency specific filtering.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
     }
   ]
 }
