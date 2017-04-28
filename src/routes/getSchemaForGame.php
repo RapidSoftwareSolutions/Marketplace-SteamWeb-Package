@@ -4,7 +4,7 @@ $app->post('/api/SteamWeb/getSchemaForGame', function ($request, $response, $arg
 
     //checking properly formed json
     $checkRequest = $this->validation;
-    $validateRes = $checkRequest->validate($request, ['apiKey', 'steamId', 'appId']);
+    $validateRes = $checkRequest->validate($request, ['apiKey', 'appId']);
     if (!empty($validateRes) && isset($validateRes['callback']) && $validateRes['callback'] == 'error') {
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($validateRes);
     } else {

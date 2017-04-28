@@ -123,11 +123,11 @@ GetSchemaForGame returns game name, gamev ersion and available game stats(achiev
 ## SteamWeb.getPlayerBans
 GetPlayerBans returns Community, VAC, and Economy ban statuses for given players.
 
-| Field  | Type       | Description
-|--------|------------|----------
-| apiKey | credentials| Your api key from Steam
-| steamId| Number     | The SteamID of the account playing.
-| version| String     | Version of the API, default v1 in this method
+| Field   | Type       | Description
+|---------|------------|----------
+| apiKey  | credentials| Your api key from Steam
+| steamIds| Number     | The SteamID of the account playing.
+| version | String     | Version of the API, default v1 in this method
 
 ## SteamWeb.getAppList
 Get full list of apps

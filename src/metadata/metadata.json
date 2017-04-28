@@ -464,7 +464,7 @@
           "required": true
         },
         {
-          "name": "steamId",
+          "name": "steamIds",
           "type": "Number",
           "info": "The SteamID of the account playing.",
           "required": true
