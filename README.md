@@ -136,7 +136,7 @@ Get full list of apps
 |--------|-------|----------
 | version| String| Version of the API, default v2 in this method
 
-## SteamWeb.serverAddress
+## SteamWeb.getServersAtAddress
 Get full list of apps
 
 | Field        | Type  | Description

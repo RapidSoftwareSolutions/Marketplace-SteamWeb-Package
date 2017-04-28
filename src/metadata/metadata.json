@@ -510,7 +510,7 @@
       ]
     },
     {
-      "name": "serverAddress",
+      "name": "getServersAtAddress",
       "description": "Get full list of apps",
       "args": [
         {
