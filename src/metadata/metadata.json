@@ -105,9 +105,14 @@
         },
         {
           "name": "achievementNames",
-          "type": "Array",
+          "type": "List",
           "info": "Name of the achievement as defined in Steamworks.",
-          "required": true
+          "required": true,
+          "structure": {
+            "name": "achievementName",
+            "type": "String",
+            "info": "Name of achievement"
+          }
         }
       ],
       "callbacks": [
@@ -133,9 +138,14 @@
         },
         {
           "name": "steamIds",
-          "type": "String",
+          "type": "List",
           "info": "Comma-delimited list of 64 bit Steam IDs to return profile information for. Up to 100 Steam IDs can be requested.",
-          "required": true
+          "required": true,
+          "structure": {
+            "name": "steamId",
+            "type": "String",
+            "info": "Steam Id"
+          }
         },
         {
           "name": "version",
@@ -465,9 +475,14 @@
         },
         {
           "name": "steamIds",
-          "type": "Number",
-          "info": "The SteamID of the account playing.",
-          "required": true
+          "type": "List",
+          "info": "The SteamIDs of the account playing.",
+          "required": true,
+          "structure": {
+            "name": "steamId",
+            "type": "String",
+            "info": "Steam Id"
+          }
         },
         {
           "name": "version",
@@ -623,15 +638,25 @@
         },
         {
           "name": "classIds",
-          "type": "Array",
+          "type": "List",
           "info": "Series of sequential numbers to form a list of class IDs",
-          "required": true
+          "required": true,
+          "structure": {
+            "name": "classId",
+            "type": "String",
+            "info": "Id of class"
+          }
         },
         {
           "name": "instanceIds",
-          "type": "Array",
+          "type": "List",
           "info": "Instance ID of the nth class.",
-          "required": false
+          "required": false,
+          "structure": {
+            "name": "instanceId",
+            "type": "String",
+            "info": "Id of instance"
+          }
         }
       ],
       "callbacks": [

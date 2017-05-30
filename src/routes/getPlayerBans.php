@@ -19,7 +19,7 @@ $app->post('/api/SteamWeb/getPlayerBans', function ($request, $response, $args) 
     }
 
     $query_str = $settings['api_url'] . "ISteamUser/GetPlayerBans/" . $version . '/';
-    $body['steamids'] = $post_data['args']['steamIds'];
+    $body['steamids'] =is_array($post_data['args']['steamIds']) ? implode(',',$post_data['args']['steamIds']) : $post_data['args']['steamIds'];
     $body['key'] = $post_data['args']['apiKey'];
 
     //requesting remote API

@@ -2,13 +2,24 @@
 
 # SteamWeb Package
 SteamWeb
-* Domain: [Steam Web API](http://steampowered.com)
+* Domain: [SteamWeb](http://steampowered.com)
 * Credentials: apiKey
 
 ## How to get credentials: 
 0. Go to [Steam Website](http://steampowered.com)
 1. Register or log in
 2. Go to [Dev page](http://steamcommunity.com/dev/registerkey) to get your apiKey
+
+
+## Custom datatypes: 
+ |Datatype|Description|Example
+ |--------|-----------|----------
+ |Datepicker|String which includes date and time|```2016-05-28 00:00:00```
+ |Map|String which includes latitude and longitude coma separated|```50.37, 26.56```
+ |List|Simple array|```["123", "sample"]``` 
+ |Select|String with predefined values|```sample```
+ |Array|Array of objects|```[{"Second name":"123","Age":"12","Photo":"sdf","Draft":"sdfsdf"},{"name":"adi","Second name":"bla","Age":"4","Photo":"asfserwe","Draft":"sdfsdf"}] ```
+ 
 
 ## SteamWeb.getNewsForApp
 Returns the latest news of a game specified by its appId.
@@ -36,7 +47,7 @@ Returns the global stats of a game specified by its appId.
 | appId           | Number| Id of the game you want the news of
 | version         | String| Version of the API, default v0001 in this method
 | count           | Number| Length of the array of global stat names you will be passing.
-| achievementNames| Array | Name of the achievement as defined in Steamworks.
+| achievementNames| List  | Name of the achievement as defined in Steamworks.
 
 ## SteamWeb.getPlayerSummaries
 Returns basic profile information for a list of 64-bit Steam IDs.
@@ -44,7 +55,7 @@ Returns basic profile information for a list of 64-bit Steam IDs.
 | Field   | Type       | Description
 |---------|------------|----------
 | apiKey  | credentials| Your api key from Steam
-| steamIds| String     | Comma-delimited list of 64 bit Steam IDs to return profile information for. Up to 100 Steam IDs can be requested.
+| steamIds| List       | Comma-delimited list of 64 bit Steam IDs to return profile information for. Up to 100 Steam IDs can be requested.
 | version | String     | Version of the API, default v0002 in this method
 
 ## SteamWeb.getFriendList
@@ -126,7 +137,7 @@ GetPlayerBans returns Community, VAC, and Economy ban statuses for given players
 | Field   | Type       | Description
 |---------|------------|----------
 | apiKey  | credentials| Your api key from Steam
-| steamIds| Number     | The SteamID of the account playing.
+| steamIds| List       | The SteamIDs of the account playing.
 | version | String     | Version of the API, default v1 in this method
 
 ## SteamWeb.getAppList
@@ -169,8 +180,8 @@ Get asset metadata for the assets in game
 | apiKey     | credentials| Your api key from Steam
 | appId      | Number     | Id of the app
 | classCount | Number     | The number of classids passed to the request
-| classIds   | Array      | Series of sequential numbers to form a list of class IDs
-| instanceIds| Array      | Instance ID of the nth class.
+| classIds   | List       | Series of sequential numbers to form a list of class IDs
+| instanceIds| List       | Instance ID of the nth class.
 
 ## SteamWeb.getAssetPrices
 Get prices of items in the economy in game
