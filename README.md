@@ -64,7 +64,7 @@ Returns the friend list of any Steam user, provided his Steam Community profile 
 | Field       | Type       | Description
 |-------------|------------|----------
 | apiKey      | credentials| Your api key from Steam
-| steamId     | Number     | 64 bit Steam ID to return friend list for.
+| steamId     | String     | 64 bit Steam ID to return friend list for.
 | version     | String     | Version of the API, default v0001 in this method
 | relationship| Select     | Relationship filter. Possibles values: all, friend.
 
@@ -74,7 +74,7 @@ Returns a list of achievements for this user by app id
 | Field   | Type       | Description
 |---------|------------|----------
 | apiKey  | credentials| Your api key from Steam
-| steamId | Number     | 64 bit Steam ID to return friend list for.
+| steamId | String     | 64 bit Steam ID to return friend list for.
 | appId   | Number     | The ID for the game you're requesting
 | version | String     | Version of the API, default v0001 in this method
 | language| String     | Language. If specified, it will return language data for the requested language.
@@ -85,7 +85,7 @@ Returns a list of achievements for this user by app id
 | Field   | Type       | Description
 |---------|------------|----------
 | apiKey  | credentials| Your api key from Steam
-| steamId | Number     | 64 bit Steam ID to return friend list for.
+| steamId | String     | 64 bit Steam ID to return friend list for.
 | appId   | Number     | The ID for the game you're requesting
 | version | String     | Version of the API, default v0001 in this method
 | language| String     | Language. If specified, it will return language data for the requested language.
@@ -96,7 +96,7 @@ GetOwnedGames returns a list of games a player owns along with some playtime inf
 | Field                 | Type       | Description
 |-----------------------|------------|----------
 | apiKey                | credentials| Your api key from Steam
-| steamId               | Number     | 64 bit Steam ID to return game list for.
+| steamId               | String     | 64 bit Steam ID to return game list for.
 | version               | String     | Version of the API, default v0001 in this method
 | includeAppinfo        | Boolean    | Include game name and logo information in the output. The default is to return appids only.
 | includePlayedFreeGames| Boolean    | By default, free games like Team Fortress 2 are excluded (as technically everyone owns them).
@@ -107,7 +107,7 @@ GetOwnedGames returns a list of games a player owns along with some playtime inf
 | Field  | Type       | Description
 |--------|------------|----------
 | apiKey | credentials| Your api key from Steam
-| steamId| Number     | 64 bit Steam ID to return played games list for.
+| steamId| String     | 64 bit Steam ID to return played games list for.
 | version| String     | Version of the API, default v0001 in this method
 | count  | Number     | Optionally limit to a certain number of games (the number of games a person has played in the last 2 weeks is typically very small) format
 
@@ -117,7 +117,7 @@ IsPlayingSharedGame returns the original owner's SteamID if a borrowing account 
 | Field  | Type       | Description
 |--------|------------|----------
 | apiKey | credentials| Your api key from Steam
-| steamId| Number     | The SteamID of the account playing.
+| steamId| String     | The SteamID of the account playing.
 | version| String     | Version of the API, default v0001 in this method
 | appId  | Number     | The AppID of the game currently playing
 
