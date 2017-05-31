@@ -66,7 +66,7 @@ Returns the friend list of any Steam user, provided his Steam Community profile 
 | apiKey      | credentials| Your api key from Steam
 | steamId     | Number     | 64 bit Steam ID to return friend list for.
 | version     | String     | Version of the API, default v0001 in this method
-| relationship| String     | Relationship filter. Possibles values: all, friend.
+| relationship| Select     | Relationship filter. Possibles values: all, friend.
 
 ## SteamWeb.getPlayerAchievements
 Returns a list of achievements for this user by app id

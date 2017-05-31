@@ -189,7 +189,8 @@
         },
         {
           "name": "relationship",
-          "type": "String",
+          "type": "Select",
+          "options": ["all", "friend"],
           "info": "Relationship filter. Possibles values: all, friend.",
           "required": false
         }
