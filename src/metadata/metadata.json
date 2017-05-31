@@ -177,7 +177,7 @@
         },
         {
           "name": "steamId",
-          "type": "Number",
+          "type": "String",
           "info": "64 bit Steam ID to return friend list for.",
           "required": true
         },
