@@ -45,7 +45,7 @@ $app->post('/api/SteamWeb/getFriendList', function ($request, $response, $args) 
         } else {
             $result['callback'] = 'error';
             $result['contextWrites']['to']['status_code'] = 'API_ERROR';
-            $result['contextWrites']['to']['status_msg'] = is_array($responseBody) ? $responseBody : json_decode($responseBody);
+            $result['contextWrites']['to']['status_msg'] = is_array($post_data) ? $post_data : json_decode($post_data);
         }
 
     } catch (\GuzzleHttp\Exception\ClientException $exception) {
