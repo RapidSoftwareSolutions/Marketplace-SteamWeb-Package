@@ -11,9 +11,11 @@ $app->post('/api/SteamWeb/getFriendList', function ($request, $response, $args) 
         $post_data = $validateRes;
     }
     //forming request to vendor API
-    $version = 'v0001';
+
     if (isset($post_data['args']['version']) && strlen($post_data['args']['version']) > 0) {
         $version = $post_data['args']['version'];
+    } else {
+        $version = 'v0001';
     }
 
     $query_str = $settings['api_url'] . "ISteamUser/GetFriendList/" . $version . '/';
@@ -43,26 +45,26 @@ $app->post('/api/SteamWeb/getFriendList', function ($request, $response, $args) 
         } else {
             $result['callback'] = 'error';
             $result['contextWrites']['to']['status_code'] = 'API_ERROR';
-            $result['contextWrites']['to']['status_msg'] = is_array($post_data) ? $post_data : json_decode($post_data);
+            $result['contextWrites']['to']['status_msg'] = is_array($all_data) ? $all_data : json_decode($all_data);
         }
 
     } catch (\GuzzleHttp\Exception\ClientException $exception) {
         $responseBody = $exception->getResponse()->getReasonPhrase();
         $result['callback'] = 'error';
         $result['contextWrites']['to']['status_code'] = 'API_ERROR';
-        $result['contextWrites']['to']['status_msg'] = $post_data;
+        $result['contextWrites']['to']['status_msg'] = $all_data;
 
     } catch (GuzzleHttp\Exception\ServerException $exception) {
 
         $responseBody = $exception->getResponse()->getBody(true);
         $result['callback'] = 'error';
-        $result['contextWrites']['to'] = json_decode($responseBody);
+        $result['contextWrites']['to'] = json_decode($all_data);
 
     } catch (GuzzleHttp\Exception\BadResponseException $exception) {
 
         $responseBody = $exception->getResponse()->getBody(true);
         $result['callback'] = 'error';
-        $result['contextWrites']['to'] = json_decode($responseBody);
+        $result['contextWrites']['to'] = json_decode($all_data);
 
     }
 
