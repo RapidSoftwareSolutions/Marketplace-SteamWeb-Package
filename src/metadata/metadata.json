@@ -139,7 +139,7 @@
         {
           "name": "steamIds",
           "type": "List",
-          "info": "Comma-delimited list of 64 bit Steam IDs to return profile information for. Up to 100 Steam IDs can be requested.",
+          "info": "Array of 64 bit Steam IDs to return profile information for. Up to 100 Steam IDs can be requested.",
           "required": true,
           "structure": {
             "name": "steamId",

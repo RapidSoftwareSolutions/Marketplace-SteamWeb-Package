@@ -55,7 +55,7 @@ Returns basic profile information for a list of 64-bit Steam IDs.
 | Field   | Type       | Description
 |---------|------------|----------
 | apiKey  | credentials| Your api key from Steam
-| steamIds| List       | Comma-delimited list of 64 bit Steam IDs to return profile information for. Up to 100 Steam IDs can be requested.
+| steamIds| List       | Array of 64 bit Steam IDs to return profile information for. Up to 100 Steam IDs can be requested.
 | version | String     | Version of the API, default v0002 in this method
 
 ## SteamWeb.getFriendList
