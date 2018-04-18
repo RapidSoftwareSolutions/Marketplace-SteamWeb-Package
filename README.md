@@ -6,9 +6,9 @@ SteamWeb
 * Credentials: apiKey
 
 ## How to get credentials: 
-0. Go to [Steam Website](http://steampowered.com)
+0. Go to [Steam Website](https://steamcommunity.com/dev/apikey)
 1. Register or log in
-2. Go to [Dev page](http://steamcommunity.com/dev/registerkey) to get your apiKey
+2. Write your domain and get your apiKey
 
 
 ## Custom datatypes: 
